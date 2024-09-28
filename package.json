@@ -1,0 +1,36 @@
+{
+  "name": "lia-wrapper",
+  "version": "1.0.0",
+  "description": "Electron wrapper for https://digital.lia.co.id/",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron src/main.js",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux"
+  },
+  "author": "Ahmad Shadiqi",
+  "build": {
+    "appId": "com.ahmadshadiqi.lia-wrapper",
+    "productName": "LIA Digital Wrapper",
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": ["portable"]
+    },
+    "linux": {
+      "icon": "assets/icon.ico",
+      "target": ["AppImage"]
+    }
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
